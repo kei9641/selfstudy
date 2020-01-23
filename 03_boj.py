@@ -15,7 +15,7 @@ x2 = list()
 y2 = list()
 r2 = list()
 
-x_len = 0
+x_len = list()
 d = list()
 
 # 입력값 나누기
@@ -34,7 +34,7 @@ r2.extend(num[5::6])
 for i in range(repeat):
     # x_len = int(x2[i]) - int(x1[i])
     # y_len = int(y2[i]) - int(y1[i])
-    x_len = x2[i] - x1[i]
+    x_len.extend(x2[i] - x1[i])
     print(x_len)
     # d = math.sqrt((x_len ** 2) + (y_len ** 2))
 
