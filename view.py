@@ -1,53 +1,21 @@
 import sys
 sys.stdin = open("view_input.txt")
 
-# max, min, count, sort 함수 x
-
 T = 10
-
 for tc in range(T):
-
     N = int(input())
     data = list(map(int, input().split()))
-    height = []
-    next_max = 0
-    result = 0
-    sight = 0
+    sight = [0] * N # 각 인덱스 조망권 수
 
-    for i in range(2, len(data)-2):
-        left = data[i-2:i]
-        right = data[i+1:i+3]
-        neighbor = left + right # 양 옆으로 두 값을 저장한 리스트
-        next_max = 0
+    for i in range(2, len(data)-2): # 거리 2이하인 이웃 높이 neighbor
+        left, right = data[i-2:i], data[i+1:i+3]
+        neighbors = left + right 
+        maxNeighbor = neighbors[0]
+        for j in range(1, len(neighbors)): # 가장 높은 이웃의 높이
+            if maxNeighbor < neighbors[j]:
+                maxNeighbor = neighbors[j]
+        if data[i] > maxNeighbor: # 조망권 가구 수
+            sight[i] = data[i] - maxNeighbor
 
-        for floor in neighbor:
-
-            if data[i] < floor:
-
-                continue
-
-            else:
-                if next_max < floor:
-                    next_max = floor
-        result = data[i] - next_max
-
-
-        height.append(result)
-    # for h in height:
-    #     sight += h
-
-
-
-    print(height)
-
-
-
-
-    # print("#{} {}".format(tc+1, ans))
-
-
-'''
-(각 값) - (양 옆으로 두 값들 중 가장 큰 값) = 결과값
-만약 각 값 <= 양 옆으로 두 값 이면 패스
-모든 인덱스의 결과값을 합하기
-'''
+    result = sum(sight) # 총 조망권 가구 수의 합
+    print("#{} {}".format(tc+1, result))
