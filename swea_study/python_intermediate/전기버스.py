@@ -1,3 +1,7 @@
+# 4831. [파이썬 S/W 문제해결 기본] 1일차 - 전기버스
+import sys
+sys.stdin = open("전기버스.txt")
+
 T = int(input())
 for tc in range(T):
     K, N, M = map(int, input().split())

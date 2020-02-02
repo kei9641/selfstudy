@@ -1,3 +1,7 @@
+# 4835. [파이썬 S/W 문제해결 기본] 1일차 - 구간합
+import sys
+sys.stdin = open("구간합.txt")
+
 T = int(input())
 for tc in range(T):
     N, M = map(int, input().split())
