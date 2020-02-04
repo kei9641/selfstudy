@@ -1,0 +1,5 @@
+numbers = list(map(int, input().split()))
+sum_number = sum(numbers)
+average = int(sum_number / len(numbers))
+print('sum : {}'.format(sum_number))
+print('avg : {}'.format(average))
