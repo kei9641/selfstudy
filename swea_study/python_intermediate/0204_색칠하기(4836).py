@@ -22,3 +22,4 @@ for tc in range(T):
                     arr[x][y] = 1
  
     print('#{} {}'.format(tc+1, count))
+
