@@ -16,7 +16,12 @@ for tc in range(T):
     for _ in range(N):
         strings.append(input())
     for x in range(N):
-        
         start = 0
         end = M
-        strings[x][start:end]
+        while end <= N:
+            M_str = strings[x][start:end]
+            start += 1
+            end += 1
+            if palindrome(M_str) == True:
+                break
+        print('#{} {}'.format(tc+1, M_str))
