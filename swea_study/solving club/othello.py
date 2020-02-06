@@ -22,7 +22,7 @@ for tc in range(T):
         dy = [-1, 0, 1, 1, 1, 0, -1, -1]
 
         for i in range(8):
-            while isWall(x-1 + dx[i], y-1 + dy[i]) == False: # 주변이 벽이 아니면
+            if isWall(x-1 + dx[i], y-1 + dy[i]) == False: # 주변이 벽이 아니면
                 if turn == 1: # 흑돌이면
                     if board[x-1 + dx[i]][y-1 + dy[i]] == 2: # 주변에 백돌이 있으면 방향 끝 값으로 이동
                         move = i
