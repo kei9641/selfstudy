@@ -9,3 +9,4 @@ def calculation(a, b, cal):
 N = int(input())
 sentence = list(input())
 #1, 2, 4, 7, 
+# eval(), repr()
