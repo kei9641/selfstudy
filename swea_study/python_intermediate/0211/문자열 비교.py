@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('문자열 비교.txt')
+
 T = int(input())
 for tc in range(T):
     str1 = input()
