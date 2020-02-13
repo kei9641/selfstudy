@@ -44,3 +44,4 @@ for tc in range(T):
         print('#{} {}'.format(tc+1, 1))
     elif sdoku == False:
         print('#{} {}'.format(tc+1, 0))
+# 만약 두 개 이상의 반복문을 빠져 나가야 한다면 함수를 사용하는 것이 더 좋음
