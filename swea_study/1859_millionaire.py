@@ -1,5 +1,3 @@
-
-
 T = int(input())
 for tc in range(T):
     N = int(input())
@@ -11,10 +9,13 @@ for tc in range(T):
             sell.append(prices[i-1])
         else:
             for j in range(len(sell)):
-                benefit += prices[i] - sell[j]
-                
+                benefit += prices[i-1] - sell[j]
             sell.clear()
-    print(benefit)
+        if i == N-1:
+            for j in range(len(sell)):
+                benefit += prices[i] - sell[j]
+    print('#{} {}'.format(tc+1, benefit))
+        
             
 
 
