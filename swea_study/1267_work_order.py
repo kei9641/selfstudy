@@ -1,6 +1,3 @@
-import sys
-sys.stdin = open('work_sequence.txt')
-
 def dfs(v):
     global V
     visited[v] = 1
