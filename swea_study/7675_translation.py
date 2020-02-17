@@ -16,11 +16,11 @@ for tc in range(T):
         isname = False
         for word in words:
             if word.isalpha() == True and word[0].isupper() == True: # 알파벳으로 이루어지고 첫글자가 대문자이면 True
-                isname = True
-                for j in range(1, len(word)): # 만약 첫글자를 제외한 글자가 대문자이면 False
-                    if word[j].isupper() == True:
-                        isname = False
-            if isname == True:
+            #     isname = True
+            #     for j in range(1, len(word)): # 만약 첫글자를 제외한 글자가 대문자이면 False
+            #         if word[j].isupper() == True:
+            #             isname = False
+            # if isname == True:
                 count += 1
         nameCnt.append(count)
     print('#{}'.format(tc+1), end=' ')
