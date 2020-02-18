@@ -1,6 +1,8 @@
 import sys
 sys.stdin = open('min_sum.txt')
 
+route = 0
+
 def dfs(x, y):
     global route, result
     if x == N-1 and y == N-1:
@@ -23,7 +25,7 @@ T = int(input())
 for tc in range(T):
     N = int(input())
     board = []
-    route = 0
+    
     result = 987654321
     for _ in range(N):
         board.append(list(map(int, input().split())))
