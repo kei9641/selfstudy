@@ -1,6 +1,3 @@
-from calc import MyDiv
+from fibo import fibo_recursion as recursion
 
-num1 = int(input())
-num2 = int(input())
-
-result = MyDiv(num1, num2)
+recursion(4) # 3
