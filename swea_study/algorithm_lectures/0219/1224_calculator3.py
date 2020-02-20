@@ -1,3 +1,6 @@
+# 연산자 우선 순위를 딕셔너리로 표현
+# 후위표기법, 계산 시 stack을 같이 사용해도 됨
+
 import sys
 sys.stdin = open('calculator3.txt')
 
