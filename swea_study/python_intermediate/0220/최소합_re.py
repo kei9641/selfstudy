@@ -11,7 +11,8 @@ def dfs(x):
         return
     for y in range(N):
         if visited[y] == 0:
-            if summ + arr[x][y] 
+            if summ + arr[x][y] > result:
+                return
             summ += arr[x][y]
             visited[y] = 1
             dfs(x+1)
