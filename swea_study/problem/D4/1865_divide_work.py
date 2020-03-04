@@ -1,6 +1,5 @@
 def divide(n, k, p):
     global maxP
-    print(p, maxP)
     if p <= maxP:
         return
     if n == k:
@@ -21,5 +20,4 @@ for tc in range(1, T+1):
     percent = 100
     maxP = 0
     divide(0, N, percent)
-    # print('#{0} {1:.6f}'.format(tc, maxP))
-
+    print('#{0} {1:.6f}'.format(tc, maxP))
