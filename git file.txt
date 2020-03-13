@@ -1,7 +1,0 @@
-homeworkshop
-lectures
-lectures-clone
-projects
-sub-class
-TIL
-selfstudy
