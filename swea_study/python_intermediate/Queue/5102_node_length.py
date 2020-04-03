@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('노드의 거리.txt')
+
 def findG():
     for i in range(V-1):
         for j in depth[i]:

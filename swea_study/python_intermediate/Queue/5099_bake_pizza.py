@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('피자굽기.txt')
+
 T = int(input())
 for tc in range(1, T+1):
     N, M = map(int, input().split())
@@ -21,7 +24,7 @@ for tc in range(1, T+1):
         # 오븐에 든 피자의 돌리자
         oven.insert(-1, oven.pop(0))
         cheese.insert(-1, cheese.pop(0))
-        # print(oven, cheese)
+        
     for i in range(N):
         if oven[i] != 0:
             idx = cheese[i]+1

@@ -1,3 +1,6 @@
+import sys
+sys.stdin = open('미로의 거리.txt')
+
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
