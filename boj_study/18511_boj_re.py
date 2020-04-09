@@ -3,5 +3,5 @@ K = int(K)
 set_K = list(input().split())
 result = ''
 
-print(set_K[-K+1])
+print(set_K[])
 # print(result)
