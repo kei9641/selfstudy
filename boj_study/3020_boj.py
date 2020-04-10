@@ -1,76 +1,41 @@
-'''
-1. 10 9
-2. 4995 37
-3. 49 6
-4. 16212 7991
-5. 4938 499034
-6. 0 9599
-7. 38428 8
-8. 42965 10405
-9. 5011 807
-10. 90151 139427
-'''
-import sys
-sys.stdin = open('tc6.txt')
-
 N, H = map(int, input().split())
-obstacle = [] # 장애물 크기
-for _ in range(N):
-    obstacle.append(int(input()))
+suksun = [0] * H # 석순
+jongu = [0] * H # 종유석
 
-destroy = N//2 # 파괴량
-firefly = 2 # 최소 파괴 경로의 수 (처음이랑 끝)
-# print(destroy, firefly)
-
-bottomstone = []  # 석순의 크기
-ceilstone = []  # 종유석의 크기
-
-# 석순, 종유석 나누기
-for i in range(N):
+# 최대 크기 값 저장
+for n in range(0, N):
+    size = int(input())
     # 석순
-    if i % 2 == 0:
-        bottomstone.append(obstacle[i])
+    if n % 2 == 0:
+        suksun[size-1] += 1
     # 종유석
     else:
-        ceilstone.append(obstacle[i])
-# 석순은 오름차순, 종유석은 내림차순
-bottomstone.sort()
-ceilstone.sort(reverse=True)
-# print(bottomstone, ceilstone)
+        jongu[size-1] += 1
 
-stones = [] # 석순, 종유석 크기의 합
-for i in range(N//2):
-    stones.append(bottomstone[i] + ceilstone[i])
-# print(stones)
+# 전체 크기 값 계산
+for i in range(H-1, 0, -1):
+    suksun[i-1] += suksun[i]
+    jongu[i-1] += jongu[i]
 
-space = [] # 남는 공간의 크기
-for i in range(N//2):
-    space.append(H-stones[i])
-# print(space)
+destroy = N # 파괴할 장애물 수
+firefly = 1 # 최소 장애물 경로 수
 
-route = [0] * H
-# 남는 공간이 있다면
-if max(space) > 0:
-    # 빈 공간만큼 경로에 저장
-    for j in range(N//2):
-        n = 0
-        while space[j] > 0:
-            route[bottomstone[j]+n] += 1
-            n += 1
-            space[j] -= 1
-    destroy -= max(route)
-    firefly = route.count(max(route))
-# 남는 공간이 없다면 
-elif max(space) == 0:
-    # 최소 파괴 경로의 수 체크
-    for j in range(N//2):
-        n = 1
-        while space[j] < 0:
-            route[bottomstone[j]-n] = 1
-            n += 1
-            space[j] += 1
-    firefly = route.count(0)
-# max(space) < 0 경우 초기값 출력
-# print(route)
+for i in range(H):
+    # 경로별 총 장애물 수
+    route = jongu[i] + suksun[H-i-1]
+    # 총 장애물 수가 최소라면 저장하고 경로 수 리셋
+    if route < destroy:
+        destroy = route
+        firefly = 1
+    # 최소 장애물을 지나는 경로라면 경로 수 증가
+    elif route == destroy:
+        firefly += 1
 
 print(destroy, firefly)
+
+'''
+시간 좀 줄이자...
+1. 하나씩 훑으면서 크기 값 더하면 시간이 너무 오래걸림..
+    => 최대 크기 값만 저장해서 밑에 값에 누적시키기
+2. 이중 for문 금지!!! (N*H는 시간초과..)
+'''
