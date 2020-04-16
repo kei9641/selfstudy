@@ -38,7 +38,7 @@ while q:
                     q.append((x+dx[n], y+dy[n]))
 
 q.append((Sx, Sy))
-visited[Sx][Sy]=0
+visited[Sx][Sy] = 0
 
 # 고슴도치 이동을 체크
 while q:
