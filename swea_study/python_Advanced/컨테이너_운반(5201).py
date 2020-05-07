@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('container_carry.txt')
+sys.stdin = open('컨테이너_운반(5201).txt')
 
 def dfs(v):
     global weigh

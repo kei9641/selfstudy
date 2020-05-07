@@ -1,3 +1,5 @@
+import syssys.stdin = open('베이비진게임(5203).txt')
+
 def babygin(a, b):
     checkA = [0] * 10
     checkB = [0] * 10

@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('cargo_dock.txt')
+sys.stdin = open('화물_도크(5202).txt')
 # start = [20, 17, 23, 4, 8]
 # end = [23, 20, 24, 14, 18]
 
