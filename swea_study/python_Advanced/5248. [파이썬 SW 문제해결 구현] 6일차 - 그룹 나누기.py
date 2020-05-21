@@ -1,4 +1,6 @@
 from collections import deque
+import sys
+sys.stdin = open('5248. [파이썬 SW 문제해결 구현] 6일차 - 그룹 나누기.txt')
 
 T = int(input())
 for tc in range(1, T+1):
