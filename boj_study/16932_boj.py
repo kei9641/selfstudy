@@ -1,3 +1,7 @@
+import sys
+sys.setrecursionlimit(10**6)
+
+
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
@@ -30,21 +34,20 @@ for x in range(N):
             cnt = 1
             group(x, y)
             num += 1
-if size.count(0) == (N*M//2+1):
-    result = sum(size)
-else:
-    for x in range(N):
-        for y in range(M):
-            if shape[x][y] == 0:
-                neighbor = []
-                connect = 0
-                for n in range(4):
-                    xn, yn = x+dx[n], y+dy[n]
-                    if isNotWall(xn, yn) and shape[xn][yn]:
-                        if shape[xn][yn] not in neighbor:
-                            neighbor.append(shape[xn][yn])
-                            connect += size[shape[xn][yn]]
-                if result < connect:
-                    result = connect
-    result += 1
-print(result)
+
+for x in range(N):
+    for y in range(M):
+        if shape[x][y] == 0:
+            neighbor = []
+            connect = 0
+            for n in range(4):
+                xn, yn = x+dx[n], y+dy[n]
+                if isNotWall(xn, yn) and shape[xn][yn]:
+                    if shape[xn][yn] not in neighbor:
+                        neighbor.append(shape[xn][yn])
+                        connect += size[shape[xn][yn]]
+            if result < connect:
+                result = connect
+print(result+1)
+                    
+
