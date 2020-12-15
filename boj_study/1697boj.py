@@ -18,7 +18,3 @@ while seconds:
             pos[move] = pos[x] + 1
 
 print(pos[K])
-
-
-# 1463 문제랑 비교해서 정리
-# 이 문제는 "뒤로가니깐" 예외 발생
